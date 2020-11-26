@@ -72,9 +72,10 @@ describe("getTotalSubjects", () => {
     expect(getTotalSubjects(people)).toBe(9);
   });
 });
-/**
+
 describe("checkIngredients", () => {
-  test("returns false if no menu items include the specified ingredient", () => {
+    
+    test("returns false if no menu items include the specified ingredient", () => {
     const menu = [
       {
         name: "tofu fritters",
@@ -107,7 +108,7 @@ describe("checkIngredients", () => {
     const menu = [
       {
         name: "tofu fritters",
-        ingredients: ["tofu", "egg yolk", "breadbrumbs", "paprika"]
+        ingredients: ["tofu", "egg yolk", "breadbrumbs", "paprika", "pepper", "cumin"]
       },
       {
         name: "black bean curry",
@@ -131,8 +132,37 @@ describe("checkIngredients", () => {
 
     expect(checkIngredients(menu, "dark chocolate")).toBe(true);
   });
-});
 
+    test("returns true if menu name includes the specified ingredient", () => {
+        const menu = [
+            {
+                name: "fish dippers ",
+                ingredients: ["tofu", "egg yolk", "breadbrumbs", "paprika"]
+            },
+            {
+                name: "black bean curry",
+                ingredients: ["black beans", "garam masala", "rice"]
+            },
+            {
+                name: "chocolate tiffin",
+                ingredients: [
+                    "dark chocolate",
+                    "egg",
+                    "flour",
+                    "brown sugar",
+                    "vanilla essence"
+                ]
+            },
+            {
+                name: "hummus",
+                ingredients: ["chickpeas", "tahini", "lemon", "garlic", "salt"]
+            }
+        ];
+
+        expect(checkIngredients(menu, "fish")).toBe(true);
+    });
+});
+/**
 describe("duplicateNumbers", () => {
   test("returns an array of numbers which appear in both arr1 and arr2", () => {
     let arr1 = [1, 55, 4, 3, 7, 8];
