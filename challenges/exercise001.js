@@ -28,10 +28,8 @@ function getSalePrice(originalPrice, reduction) {
   if (reduction === undefined) throw new Error("reduction is required");
 
     var salePrice = originalPrice- ((originalPrice * reduction)/100);
-    if (Number.isInteger(salePrice))
-        return salePrice;
-    else
-        return parseFloat(salePrice.toFixed(2));
+
+    return checkIfRoundNeeded(salePrice, 2);
 }
 
 function getMiddleCharacter(str) {
@@ -85,7 +83,22 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+
+    var total = 0;
+    var average = 0;
+    for (var i = 0; i < scores.length; i++) {
+        total += scores[i];
+    }
+    average = total / scores.length;
+
+    return checkIfRoundNeeded(average, 2);
+}
+
+function checkIfRoundNeeded(number, decplace) {
+    if (Number.isInteger(number))
+        return number;
+    else
+        return parseFloat(number.toFixed(decplace));
 }
 
 function simpleFizzBuzz(n) {

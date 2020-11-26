@@ -125,7 +125,7 @@ describe("countLinuxUsers", () => {
     expect(countLinuxUsers(users)).toBe(5);
   });
 });
-/**
+
 describe("getMeanScore", () => {
   test("returns the mean score from an array of scores", () => {
     expect(getMeanScore([8, 9, 7])).toBe(8);
@@ -136,7 +136,7 @@ describe("getMeanScore", () => {
     expect(getMeanScore([24, 44, 56, 11, 12, 17, 34])).toBe(28.29);
   });
 });
-
+/**
 describe("simpleFizzBuzz", () => {
   test("returns 'fizz' if the number is divisible by 3", () => {
     expect(simpleFizzBuzz(3)).toBe("fizz");
