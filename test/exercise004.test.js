@@ -30,7 +30,7 @@ describe("findNamesBeginningWith", () => {
     expect(findNamesBeginningWith(names, "F")).toEqual([]);
   });
 });
-/**
+
 describe("findVerbs", () => {
   test("returns an array of words that are considered verbs (because they begin with 'to ')", () => {
     const words = [
@@ -57,7 +57,7 @@ describe("findVerbs", () => {
     expect(findVerbs(words)).toEqual(["to eat", "to sneak", "to squeak"]);
   });
 });
-
+/**
 describe("getIntegers", () => {
   test("returns an array containing only integers", () => {
     const nums = [1, 3.5, 2.1, 1, 4, 9];
