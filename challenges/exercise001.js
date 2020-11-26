@@ -17,10 +17,7 @@ function addVAT(originalPrice, vatRate) {
 
     var vat = (vatRate + 100) / 100;
     var totalPrice = originalPrice * vat;
-    if (Number.isInteger(totalPrice))
-        return totalPrice;
-    else
-        return parseFloat(totalPrice.toFixed(2));
+    return checkIfRoundNeeded( totalPrice, 2);
  }
 
 function getSalePrice(originalPrice, reduction) {

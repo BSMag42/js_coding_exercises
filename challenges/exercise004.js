@@ -53,6 +53,11 @@ function getCities(users) {
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
 
+    var sqrRootArr = [];
+    for (var i = 0; i < nums.length; i++) {
+        sqrRootArr.push(Math.sqrt(nums[i]));
+    }
+    return sqrRootArr;
 }
 
 function findSentencesContaining(sentences, str) {
