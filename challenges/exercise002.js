@@ -28,8 +28,15 @@ function countSheep(arr) {
 }
 
 function hasMPostCode(person) {
-  if (person === undefined) throw new Error("person is required");
-  // Your code here!
+    if (person === undefined) throw new Error("person is required");
+
+    var postcode = person.address.postCode;
+    var city = person.address.city;
+
+    if ((postcode.charAt(0).toUpperCase() == "M") && (city == "Manchester"))
+        return true;
+    else
+        return false;
 }
 
 

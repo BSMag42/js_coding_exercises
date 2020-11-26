@@ -104,7 +104,7 @@ describe("countSheep", () => {
     expect(countSheep(arr)).toBe(5);
   });
 });
-/**
+
 describe("hasMPostCode", () => {
   test("returns true if the person has a postcode starting with M", () => {
     const person = {
@@ -145,4 +145,4 @@ describe("hasMPostCode", () => {
     expect(hasMPostCode(person)).toBe(false);
   });
 });
-**/
+
