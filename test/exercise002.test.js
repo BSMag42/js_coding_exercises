@@ -72,7 +72,7 @@ describe("getBusNumbers", () => {
     expect(getBusNumbers(43728)).toBe(1094);
   });
 });
-/**
+
 describe("countSheep", () => {
   test("returns 0 if there are 0 sheep in the array", () => {
     const arr = ["dog", "badger", "dog", "dog", "chicken"];
@@ -104,7 +104,7 @@ describe("countSheep", () => {
     expect(countSheep(arr)).toBe(5);
   });
 });
-
+/**
 describe("hasMPostCode", () => {
   test("returns true if the person has a postcode starting with M", () => {
     const person = {

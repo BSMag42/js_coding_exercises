@@ -18,13 +18,20 @@ function getBusNumbers(people) {
 
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+
+    var count = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == "sheep")
+            count += 1;
+    }
+    return count;
 }
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
   // Your code here!
 }
+
 
 module.exports = {
   getFillings,
