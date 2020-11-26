@@ -57,7 +57,7 @@ describe("findVerbs", () => {
     expect(findVerbs(words)).toEqual(["to eat", "to sneak", "to squeak"]);
   });
 });
-/**
+
 describe("getIntegers", () => {
   test("returns an array containing only integers", () => {
     const nums = [1, 3.5, 2.1, 1, 4, 9];
@@ -65,7 +65,7 @@ describe("getIntegers", () => {
     expect(getIntegers([])).toEqual([]);
     expect(getIntegers([4.9, 9.33, 12.4])).toEqual([]);
   });
-});
+});/**
 
 describe("getCities", () => {
   test("returns an array of the cities of each user", () => {
