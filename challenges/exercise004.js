@@ -54,10 +54,19 @@ function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
 
     var sqrRootArr = [];
+    var num;
     for (var i = 0; i < nums.length; i++) {
-        sqrRootArr.push(Math.sqrt(nums[i]));
+        num = checkIfRoundNeeded(Math.sqrt(nums[i]), 2);
+        sqrRootArr.push(num);
     }
     return sqrRootArr;
+}
+
+function checkIfRoundNeeded(number, decplace) {
+    if (Number.isInteger(number))
+        return number;
+    else
+        return parseFloat(number.toFixed(decplace));
 }
 
 function findSentencesContaining(sentences, str) {
