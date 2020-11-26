@@ -43,7 +43,7 @@ describe("getSquares", () => {
     ]);
   });
 });
-/**
+
 describe("getTotalSubjects", () => {
   test("returns 0 if no people have subjects", () => {
     const people = [
@@ -72,7 +72,7 @@ describe("getTotalSubjects", () => {
     expect(getTotalSubjects(people)).toBe(9);
   });
 });
-
+/**
 describe("checkIngredients", () => {
   test("returns false if no menu items include the specified ingredient", () => {
     const menu = [
