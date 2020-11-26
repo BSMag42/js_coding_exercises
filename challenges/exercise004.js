@@ -72,7 +72,13 @@ function checkIfRoundNeeded(number, decplace) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+    var regexp = new RegExp(str, 'i');
+    var matchArr = [];
+    for (var i = 0; i < sentences.length; i++) 
+        if (regexp.test(sentences[i])) {
+            matchArr.push(sentences[i]);        
+    }
+    return matchArr; 
 }
 
 function getLongestSides(triangles) {
