@@ -43,7 +43,7 @@ describe("isFromManchester", () => {
     expect(isFromManchester(person)).toBe(false);
   });
 });
-/**
+
 describe("getBusNumbers", () => {
   // A bus can hold 40 people. This function should return how many buses are required for the number of people
   test("returns 1 if all the people fit in 1 bus", () => {
@@ -72,7 +72,7 @@ describe("getBusNumbers", () => {
     expect(getBusNumbers(43728)).toBe(1094);
   });
 });
-
+/**
 describe("countSheep", () => {
   test("returns 0 if there are 0 sheep in the array", () => {
     const arr = ["dog", "badger", "dog", "dog", "chicken"];
