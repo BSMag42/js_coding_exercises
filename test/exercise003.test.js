@@ -162,7 +162,7 @@ describe("checkIngredients", () => {
         expect(checkIngredients(menu, "fish")).toBe(true);
     });
 });
-/**
+
 describe("duplicateNumbers", () => {
   test("returns an array of numbers which appear in both arr1 and arr2", () => {
     let arr1 = [1, 55, 4, 3, 7, 8];
@@ -194,4 +194,3 @@ describe("duplicateNumbers", () => {
     expect(duplicateNumbers(arr1, arr2)).toEqual([3]);
   });
 });
-**/
