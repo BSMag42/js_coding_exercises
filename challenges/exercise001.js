@@ -39,14 +39,12 @@ function getMiddleCharacter(str) {
 
     var startpos;
     var numofchar;
-
-    if (str.length % 2 == 1)//even
-    {
+    //even
+    if (str.length % 2 == 1){
         startpos = str.length / 2;
         numofchar = 1;
     }
-    else
-    {
+    else{
         startpos = str.length / 2 - 1;
         numofchar = 2;
     }
@@ -57,21 +55,26 @@ function getMiddleCharacter(str) {
 function reverseWord(word) {
     if (word === undefined) throw new Error("word is required");
     var reversed = "";
-    for (var i = word.length - 1; i >= 0; i--)
-    {
+    for (var i = word.length - 1; i >= 0; i--){
         reversed += word[i];
     }
     return reversed;
 }
 
 function reverseAllWords(words) {
-  if (words === undefined) throw new Error("words is required");
-    reverseWord(words);
+    if (words === undefined) throw new Error("words is required");
+    var revArray = [];
+    var revWord = "";
+    for (var i = 0; i < words.length; i++) {
+        revWord = reverseWord(words[i])
+        revArray.push(revWord);
+    }
+    return revArray;
 }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
+
 }
 
 function getMeanScore(scores) {
