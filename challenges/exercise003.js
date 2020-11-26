@@ -4,8 +4,17 @@ function getSquares(nums) {
 }
 
 function camelCaseWords(words) {
-  if (words === undefined) throw new Error("words is required");
-  // Your code here!
+    if (words === undefined) throw new Error("words is required");
+    var camelCase = "";
+    for (i = 0; i < words.length; i++) {
+        if (i == 0) {
+            camelCase += words[0]
+        }
+        else {
+            camelCase += words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+    }
+    return camelCase;
 }
 
 function getTotalSubjects(people) {

@@ -10,7 +10,7 @@ describe("camelCaseWords", () => {
   test("camel cases a single word (i.e. no capital letter at beginning)", () => {
     expect(camelCaseWords(["my"])).toBe("my");
   });
-
+    
   test("camel cases two words (i.e. second word is capitalized)", () => {
     expect(camelCaseWords(["my", "variable"])).toBe("myVariable");
   });
@@ -24,7 +24,7 @@ describe("camelCaseWords", () => {
     );
   });
 });
-
+/**
 describe("getSquares", () => {
   test("returns an empty array if empty array passed", () => {
     expect(getSquares([])).toEqual([]);
@@ -164,3 +164,4 @@ describe("duplicateNumbers", () => {
     expect(duplicateNumbers(arr1, arr2)).toEqual([3]);
   });
 });
+**/
