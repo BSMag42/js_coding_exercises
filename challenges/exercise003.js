@@ -1,6 +1,11 @@
 function getSquares(nums) {
-  if (nums === undefined) throw new Error("nums is required");
-  // Your code here!
+    if (nums === undefined) throw new Error("nums is required");
+
+    var squareArray = [];
+    for (i = 0; i < nums.length; i++) {
+        squareArray.push(nums[i] * nums[i])
+    }
+    return squareArray;
 }
 
 function camelCaseWords(words) {

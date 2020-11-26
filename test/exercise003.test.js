@@ -24,7 +24,7 @@ describe("camelCaseWords", () => {
     );
   });
 });
-/**
+
 describe("getSquares", () => {
   test("returns an empty array if empty array passed", () => {
     expect(getSquares([])).toEqual([]);
@@ -43,7 +43,7 @@ describe("getSquares", () => {
     ]);
   });
 });
-
+/**
 describe("getTotalSubjects", () => {
   test("returns 0 if no people have subjects", () => {
     const people = [
