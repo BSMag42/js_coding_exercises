@@ -43,12 +43,16 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  // Your code here
+    var cityArr = [];
+    for (var i = 0; i < users.length; i++) {
+        cityArr.push(users[i].data.city.displayName);
+    }
+    return cityArr;
 }
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+
 }
 
 function findSentencesContaining(sentences, str) {

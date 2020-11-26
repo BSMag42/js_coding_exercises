@@ -65,7 +65,7 @@ describe("getIntegers", () => {
     expect(getIntegers([])).toEqual([]);
     expect(getIntegers([4.9, 9.33, 12.4])).toEqual([]);
   });
-});/**
+});
 
 describe("getCities", () => {
   test("returns an array of the cities of each user", () => {
@@ -110,7 +110,7 @@ describe("getCities", () => {
     expect(getCities(users)).toEqual(["MCR", "LVP", "LVP", "GLW"]);
   });
 });
-
+/**
 describe("getSquareRoots", () => {
   test("gets the square root of each number to 2 decimal places", () => {
     const nums = [36, 77, 12, 355, 92, 5];
