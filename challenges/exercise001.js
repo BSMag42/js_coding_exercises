@@ -1,19 +1,27 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+
+  return word.charAt(0).toUpperCase() + word.slice(1);    
 }
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
+  
+    return firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase();    
 }
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
-}
+
+    var vat = (vatRate + 100) / 100;
+    var totalprice = originalPrice * vat;
+    if (Number.isInteger(totalprice))
+        return totalprice;
+    else
+        return parseFloat(totalprice.toFixed(2));
+ }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
