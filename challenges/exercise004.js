@@ -2,7 +2,7 @@ function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
 
     const lessThanOne = nums.filter((val) => {
-        return val < 1
+        return val < 1;
     });
 
     return lessThanOne;
@@ -11,14 +11,13 @@ function findSmallNums(nums) {
 
 function findNamesBeginningWith(names, char) {
 
-  if (!names) throw new Error("names is required");
+    if (!names) throw new Error("names is required");
     if (!char) throw new Error("char is required");
-    
-    var matchArr = [];
-    for (var i = 0; i < names.length; i++) {
-        if (names[i].charAt(0) == char)
-            matchArr.push(names[i]);
-    }
+
+    const matchArr = names.filter((val) => {
+        return val.charAt(0) == char;
+    });
+
     return matchArr;
 }
 
