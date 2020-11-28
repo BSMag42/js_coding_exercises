@@ -26,6 +26,7 @@ function findVerbs(words) {
     const verbArr = words.filter((val) => {
         return val.includes("to ");
     });
+
     return verbArr;
 }
 
@@ -35,15 +36,17 @@ function getIntegers(nums) {
     const intArr = nums.filter((val) => {
         return Number.isInteger(val);
     });
+
     return intArr;
 }
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-    var cityArr = [];
-    for (var i = 0; i < users.length; i++) {
-        cityArr.push(users[i].data.city.displayName);
-    }
+
+    const cityArr = users.map((val) => {
+        return val.data.city.displayName;
+    });
+
     return cityArr;
 }
 
