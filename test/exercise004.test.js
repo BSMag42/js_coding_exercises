@@ -17,7 +17,7 @@ describe("findSmallNums", () => {
     expect(findSmallNums([])).toEqual([]);
   });
 });
-
+/**
 describe("findNamesBeginningWith", () => {
   test("returns an array of names beginning with the specified character", () => {
     const names = ["Sally", "Dave", "Susan", "Geoff", "Riley", "Sam"];
@@ -163,3 +163,4 @@ describe("getLongestSides", () => {
     expect(getLongestSides(data2)).toEqual([7, 9, 6, 13, 12]);
   });
 });
+**/
