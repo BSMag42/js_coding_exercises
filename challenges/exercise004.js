@@ -1,14 +1,9 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
 
-    let lessThanOne = [];
-
-    nums.forEach((val) => {
-        if (val < 1) {
-            lessThanOne.push(val)
-        }
+    const lessThanOne = nums.filter((val) => {
+        return val < 1
     });
-
 
     return lessThanOne;
 }
@@ -60,20 +55,11 @@ function getCities(users) {
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
 
-    var sqrRootArr = [];
-    var num;
-    for (var i = 0; i < nums.length; i++) {
-        num = checkIfRoundNeeded(Math.sqrt(nums[i]), 2);
-        sqrRootArr.push(num);
-    }
-    return sqrRootArr;
-}
+    const sqrRootArr = nums.map((val) => {
+        return Number(Math.sqrt(val).toFixed(2));
+    });
 
-function checkIfRoundNeeded(number, decplace) {
-    if (Number.isInteger(number))
-        return number;
-    else
-        return parseFloat(number.toFixed(decplace));
+    return sqrRootArr;
 }
 
 function findSentencesContaining(sentences, str) {
