@@ -62,13 +62,13 @@ function getSquareRoots(nums) {
 
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
-  if (!str) throw new Error("str is required");
-    var regexp = new RegExp(str, 'i');
-    var matchArr = [];
-    for (var i = 0; i < sentences.length; i++) 
-        if (regexp.test(sentences[i])) {
-            matchArr.push(sentences[i]);        
-    }
+    if (!str) throw new Error("str is required");
+
+    let regexp = new RegExp(str, 'i');
+    const matchArr = sentences.filter((val) => {
+        return regexp.test(val);
+    });
+
     return matchArr; 
 }
 
