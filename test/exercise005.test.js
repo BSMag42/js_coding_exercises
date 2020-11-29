@@ -68,7 +68,7 @@ describe("sumArrays", () => {
   });
 });
 
-fdescribe("arrShift", () => {
+describe("arrShift", () => {
   test("returns an array with the first and last items swapped", () => {
     expect(arrShift([1, 2])).toEqual([2, 1]);
     expect(arrShift([1, 2, 3])).toEqual([3, 2, 1]);
@@ -177,5 +177,5 @@ describe("getWordFrequencies", () => {
       we: 1,
       here: 1
     });
-  });
+  })
 });

@@ -10,12 +10,14 @@ const findNextNumber = (nums, n) => {
     return nextNum;
 };
 
-
-
 const count1sand0s = str => {
     if (str === undefined) throw new Error("str is required");
-    const countOccurrences = [{ '1': 0, '0': 0 }];
-
+    let countArr = str.split('');
+    let count = countArr.reduce((acc, val,) => {
+      acc[val] = acc[val] + 1;
+      return acc;
+    }, {"1":0,"0":0});//need to return a count of zero if none there
+  return count;
 };
 
 const reverseNumber = n => {
@@ -25,7 +27,15 @@ const reverseNumber = n => {
 
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
-  // Your code here!
+  function sumRecursiveArray(arr) {
+    return arr.reduce(function(acc, value) {
+      return acc + (Array.isArray(value) ? sumRecursiveArray(value) : value);
+    }, 0);
+  }
+  
+  const total = sumRecursiveArray(arrs);
+  console.log("total " + total);
+  return total;
 };
 
 const arrShift = arr => {
@@ -40,12 +50,32 @@ const arrShift = arr => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
+  for (const [key, value] of Object.entries(haystack)) {
+    console.log( key + ':' + value);
+    var regexp = new RegExp(searchTerm, 'i');
+    if( value.toString().search(regexp) >= 0 )//force to string for search
+      return true;
+  }
+  return false;
 };
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+
+    str = str.toLowerCase().replace(/[^a-zA-Z ]/g, "");
+    let words = str.split(/\s+/);
+
+    const wordcount = words.reduce((acc, val) => {
+        if (!acc[val]) {
+            acc[val] = 1;
+            return acc;
+        } else {
+            acc[val] = acc[val] + 1;
+            return acc;
+        }
+    }, {});
+
+    return wordcount;
 };
 
 module.exports = {
