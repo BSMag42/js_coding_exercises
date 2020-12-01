@@ -33,9 +33,7 @@ const sumArrays = arrs => {
     }, 0);
   }
   
-  const total = sumRecursiveArray(arrs);
-  console.log("total " + total);
-  return total;
+  return sumRecursiveArray(arrs);
 };
 
 const arrShift = arr => {
@@ -51,7 +49,6 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   for (const [key, value] of Object.entries(haystack)) {
-    console.log( key + ':' + value);
     var regexp = new RegExp(searchTerm, 'i');
     if( value.toString().search(regexp) >= 0 )//force to string for search
       return true;
