@@ -24,14 +24,14 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
-  let dna = new RegExp("CGTA");
-  if(str.match(dna)){
-      return true;
-  }
-  else{
-    alert("message");
-    return false;
-  } 
+  const dna = ["A","C","G","T"];
+  let result = true;
+  [...str].forEach(l => { 
+      if (!dna.includes(l)) {
+        result = false;
+    }
+  });
+  return result;  
 };
 
 /**

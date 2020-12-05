@@ -23,13 +23,22 @@ fdescribe("isValidDNA", () => {
     expect(isValidDNA("CGTA")).toBeTruthy();
   }); 
 
+  test("receive a string containing only C, G, T or A return true", () => {
+    expect(isValidDNA("CTGA")).toBeTruthy();
+  }); 
+
   test("receive a string containing mix of C, G, T or A return true", () => {
-    expect(isValidDNA("CCCCGTATTT")).toBeTruthy();
+    expect(isValidDNA("CCCCGTATTTCCC")).toBe(true);
   }); 
 
   test("receive a string containing no C, G, T or A return false", () => {
     expect(isValidDNA("FFFFFZZ")).toBe(false);
   }); 
+
+  test("receive a string containing mix of C, G, T, A  and other letters to return false", () => {
+    expect(isValidDNA("CGTAFFCCCFFFZZ")).toBe(false);
+  }); 
+
 });
 
 
