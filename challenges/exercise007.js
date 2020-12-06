@@ -69,11 +69,9 @@ const getScreentimeAlertList = (users, date) => {
         if( d.date === date ){
           let dailyscreen = Object.values(d.usage);
           dailyscreen.forEach( min =>{ totalUserMin += min; });
-          console.log("user " + users[i].username + " totalUserMin " + totalUserMin);
         };
       });
     if(totalUserMin > 100){
-      console.log("add user " + users[i].username);
       screenArr.push(users[i].username);
     };
   };//outer for
