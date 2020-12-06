@@ -27,20 +27,26 @@ const isValidDNA = str => {
   const dna = ["A","C","G","T"];
   let result = true;
   [...str].forEach(l => { 
-      if (!dna.includes(l)) {
-        result = false;
+    if (!dna.includes(l)) {
+      result = false;
     }
   });
   return result;  
 };
 
 /**
- * This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
+ * This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. 
+ * In DNA, T always pairs with A, and C always pairs with G. 
+ * So a string of "ACTG" would have a complementary DNA string of "TGAC".
  * @param {String} str
  * @returns {String}
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  
+  let dnachars = {"A":"T","C":"G","G":"C","T":"A"};
+  let dnapattern = new RegExp(/[ACTG]/g);
+  return str.replace(dnapattern , m => dnachars[m]);    
 };
 
 /**

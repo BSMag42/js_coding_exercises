@@ -1,5 +1,5 @@
 const {
-  sumMultiples, isValidDNA
+  sumMultiples, isValidDNA, getComplementaryDNA
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -18,7 +18,7 @@ describe("sumMultiples", () => {
   });
 });
 
-fdescribe("isValidDNA", () => {
+describe("isValidDNA", () => {
   test("receive a string containing only C, G, T or A return true", () => {
     expect(isValidDNA("CGTA")).toBeTruthy();
   }); 
@@ -41,4 +41,12 @@ fdescribe("isValidDNA", () => {
 
 });
 
-
+fdescribe("getComplementaryDNA", () => {
+  test("string of ACTG would have a complementary DNA string of TGAC", () =>{
+    expect(getComplementaryDNA("ACTG")).toBe("TGAC");
+  });
+  test("string of many ACTG mixed up returns correct complementary DNA pair", () =>{
+    expect(getComplementaryDNA("CCAATTGGTAC")).toBe("GGTTAACCATG");
+  });
+  
+});
