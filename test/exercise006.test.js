@@ -76,4 +76,21 @@ fdescribe("createMatrix", () => {
     let results = createMatrix(3, "foo");
     expect(results.toString()).toBe(expected.toString());  
   });
+
+  test("take number 4, return array filled with fill paramater bar", () => {
+    const expected =       [
+      ["bar", "bar", "bar", "bar"],
+      ["bar", "bar", "bar", "bar"],
+      ["bar", "bar", "bar", "bar"],
+      ["bar", "bar", "bar", "bar"]
+    ]
+    let results = createMatrix(4, "bar");
+    expect(results.toString()).toBe(expected.toString());  
+  });
+
+  test("take number 0 return empty array", () => {
+    let results = createMatrix(0, "diditwork");
+    const expected = [];
+    expect(results.toString()).toBe(expected.toString());  
+  });
 });
