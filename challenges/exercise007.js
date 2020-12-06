@@ -109,9 +109,18 @@ const hexToRGB = hexStr => {
  * ]
  * The function should return "X" if player X has won, "0" if the player 0 has won, and null if there is currently no winner.
  * @param {Array} board
+ * to findWinner check
+ * All three cells in any row are the same
+ * All three cells in any column are the same
+ * All three cells diagonally on the board are the same.
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+  const matches = [[1, 2, 3], [4, 5, 6], [7, 8, 9], //horizontal
+                 [1, 4, 7], [2, 5, 8], [3, 6, 9], //vertical
+                 [1, 5, 9],[3, 5, 7]]; //diagonal
+
+  
 };
 
 module.exports = {

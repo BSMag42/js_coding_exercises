@@ -1,5 +1,5 @@
 const {
-    sumDigits, createRange, getScreentimeAlertList, hexToRGB//, findWinner
+    sumDigits, createRange, getScreentimeAlertList, hexToRGB, findWinner
 } = require("../challenges/exercise007");
 
 describe("sumDigits", () => {
@@ -67,7 +67,7 @@ describe("getScreentimeAlertList", () => {
     });
 });
 
-fdescribe("hexToRGB", () => {
+describe("hexToRGB", () => {
     test("hexadec color code in the format #FF1133 rgb(255,17,51)", () => {
         expect(hexToRGB("#FF1133")).toEqual("rgb(255,17,51)");
     });
@@ -77,5 +77,16 @@ fdescribe("hexToRGB", () => {
     test("hexadec color code in the format #CCCCCC rgb", () => {
         expect(hexToRGB("#CCCCCC")).toEqual("rgb(204,204,204)");
     });
+});
+
+fdescribe("findWinner", () => {
+    const board1 = [
+        ["X", "0", null],
+        ["X", null, "0"],
+        ["X", null, "0"]
+    ];
+    test("should return X if player X has won", () => {
+        expect(findWinner(board1)).toEqual("X");   
+    })
 });
 
