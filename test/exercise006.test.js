@@ -1,5 +1,5 @@
 const {
-  sumMultiples, isValidDNA, getComplementaryDNA, isItPrime
+  sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -45,28 +45,35 @@ describe("getComplementaryDNA", () => {
   test("string of ACTG would have a complementary DNA string of TGAC", () => {
     expect(getComplementaryDNA("ACTG")).toBe("TGAC");
   });
+
   test("string of many ACTG mixed up returns correct complementary DNA pair", () => {
     expect(getComplementaryDNA("CCAATTGGTAC")).toBe("GGTTAACCATG");
   });  
 });
 
-fdescribe("isItPrime", () => {
+describe("isItPrime", () => {
   test("check a number return true if prime", () => {
     expect(isItPrime(3)).toBe(true);
   });
+
+  test("check a number return true if prime", () => {
+    expect(isItPrime(2)).toBeTruthy();
+  });
+
   test("return false if not prime", () =>{
-    expect(isItPrime(8)).toBeFalsy;
+    expect(isItPrime(8)).toBeFalsy();
   });
   
 });
 
-/**
- *  * This function should receive a number and return an array of n arrays, each filled with n items. 
- * The parameter "fill" should be used as the filler of the arrays. 
- * For example, given parameters 3 and "foo" the resulting matrix should be:
- * [
- *   ["foo", "foo", "foo"],
- *   ["foo", "foo", "foo"],
- *   ["foo", "foo", "foo"]
- * ]
- */
+fdescribe("createMatrix", () => {
+  test("take number 3, return array filled with fill paramater foo", () => {
+    const expected =       [
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"]
+    ]
+    let results = createMatrix(3, "foo");
+    expect(results.toString()).toBe(expected.toString());  
+  });
+});
