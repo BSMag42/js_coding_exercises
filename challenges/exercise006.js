@@ -65,11 +65,14 @@ const isItPrime = n => {
         return false;
       }
     }
+    return true;
   }
 };
 
 /**
- * This function should receive a number and return an array of n arrays, each filled with n items. The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:
+ * This function should receive a number and return an array of n arrays, each filled with n items. 
+ * The parameter "fill" should be used as the filler of the arrays. 
+ * For example, given parameters 3 and "foo" the resulting matrix should be:
  * [
  *   ["foo", "foo", "foo"],
  *   ["foo", "foo", "foo"],

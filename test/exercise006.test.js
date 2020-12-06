@@ -1,5 +1,5 @@
 const {
-  sumMultiples, isValidDNA, getComplementaryDNA
+  sumMultiples, isValidDNA, getComplementaryDNA, isItPrime
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -50,8 +50,23 @@ describe("getComplementaryDNA", () => {
   });  
 });
 
-fdescribe("isPrime", () => {
+fdescribe("isItPrime", () => {
   test("check a number return true if prime", () => {
-    expect(isPrime(3)).toBeTruthy();
+    expect(isItPrime(3)).toBe(true);
   });
+  test("return false if not prime", () =>{
+    expect(isItPrime(8)).toBeFalsy;
+  });
+  
 });
+
+/**
+ *  * This function should receive a number and return an array of n arrays, each filled with n items. 
+ * The parameter "fill" should be used as the filler of the arrays. 
+ * For example, given parameters 3 and "foo" the resulting matrix should be:
+ * [
+ *   ["foo", "foo", "foo"],
+ *   ["foo", "foo", "foo"],
+ *   ["foo", "foo", "foo"]
+ * ]
+ */
