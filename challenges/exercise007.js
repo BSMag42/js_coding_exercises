@@ -4,7 +4,7 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
-  return n.reduce((acc, val) => { return acc + val}, 0);
+  return n.reduce((acc, val) => { return acc + val }, 0);
 };
 
 /**
@@ -17,15 +17,15 @@ const sumDigits = n => {
  * @param {Number} end
  * @param {Number} step
  */
-const createRange = (start, end, step=1) => {
+const createRange = (start, end, step = 1) => {
   if (start === undefined) throw new Error("start is required");
-    if (end === undefined) throw new Error("end is required");
-    if (step === undefined) throw new Error("step is required");
-    let rangeArr = [];
-    for (let i = start; i <= end; i+=step) {
-      rangeArr.push(i);
-    }
-    return rangeArr;
+  if (end === undefined) throw new Error("end is required");
+  if (step === undefined) throw new Error("step is required");
+  let rangeArr = [];
+  for (let i = start; i <= end; i += step) {
+    rangeArr.push(i);
+  }
+  return rangeArr;
 };
 
 /**
@@ -63,15 +63,15 @@ const getScreentimeAlertList = (users, date) => {
   if (date === undefined) throw new Error("date is required");
 
   let screenArr = [];
-  for( let i=0; i<users.length; i++ ){
+  for (let i = 0; i < users.length; i++) {
     let totalUserMin = 0;
     users[i].screenTime.forEach(d => {
-        if( d.date === date ){
-          let dailyscreen = Object.values(d.usage);
-          dailyscreen.forEach( min =>{ totalUserMin += min; });
-        };
-      });
-    if(totalUserMin > 100){
+      if (d.date === date) {
+        let dailyscreen = Object.values(d.usage);
+        dailyscreen.forEach(min => { totalUserMin += min; });
+      };
+    });
+    if (totalUserMin > 100) {
       screenArr.push(users[i].username);
     };
   };//outer for
@@ -93,6 +93,11 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  let red = parseInt(hexStr.slice(1, 3), 16);
+  let green = parseInt(hexStr.slice(3, 5), 16);
+  let blue = parseInt(hexStr.slice(5, 7), 16);
+
+  return "rgb(" + red + "," + green + "," + blue + ")";
 };
 
 /**
