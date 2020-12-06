@@ -41,12 +41,17 @@ describe("isValidDNA", () => {
 
 });
 
-fdescribe("getComplementaryDNA", () => {
-  test("string of ACTG would have a complementary DNA string of TGAC", () =>{
+describe("getComplementaryDNA", () => {
+  test("string of ACTG would have a complementary DNA string of TGAC", () => {
     expect(getComplementaryDNA("ACTG")).toBe("TGAC");
   });
-  test("string of many ACTG mixed up returns correct complementary DNA pair", () =>{
+  test("string of many ACTG mixed up returns correct complementary DNA pair", () => {
     expect(getComplementaryDNA("CCAATTGGTAC")).toBe("GGTTAACCATG");
+  });  
+});
+
+fdescribe("isPrime", () => {
+  test("check a number return true if prime", () => {
+    expect(isPrime(3)).toBeTruthy();
   });
-  
 });
