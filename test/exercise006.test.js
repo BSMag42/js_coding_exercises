@@ -1,5 +1,5 @@
 const {
-  sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix
+  sumMultiples, isValidDNA, getComplementaryDNA, isItPrime, createMatrix, areWeCovered
 } = require("../challenges/exercise006");
 
 describe("sumMultiples", () => {
@@ -66,7 +66,7 @@ describe("isItPrime", () => {
   
 });
 
-fdescribe("createMatrix", () => {
+describe("createMatrix", () => {
   test("take number 3, return array filled with fill paramater foo", () => {
     const expected =       [
       ["foo", "foo", "foo"],
@@ -92,5 +92,35 @@ fdescribe("createMatrix", () => {
     let results = createMatrix(0, "diditwork");
     const expected = [];
     expect(results.toString()).toBe(expected.toString());  
+  });
+});
+
+describe("areWeCovered", () => {
+  test("take array return false if < 3 staff - 1 staff", () =>{
+    const staff = [ { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] }];
+    expect(areWeCovered(staff,"Monday")).toBeFalsy();
+  });
+});
+
+describe("areWeCovered", () => {
+  test("take array return false if < 3 staff to cover - 2 here", () =>{
+    const staff = [ 
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] }];
+    expect(areWeCovered(staff,"Monday")).toBeFalsy();
+  });
+
+  describe("areWeCovered", () => {
+    test("take array return true if >= 3 staff to cover", () =>{
+      const staff = [ 
+        { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+        { name: "Sinéad", rota: ["Saturday", "Sunday", "Monday", "Wednesday"] },
+        { name: "Tim", rota: ["Saturday", "Sunday", "Monday", "Friday"] },
+        { name: "Anne", rota: ["Saturday", "Sunday", "Wednesday", "Friday"] },
+        { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] }
+      ];
+
+      expect(areWeCovered(staff,"Friday")).toBeTruthy();
+    });
   });
 });
