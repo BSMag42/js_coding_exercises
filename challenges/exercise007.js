@@ -132,9 +132,7 @@ const findWinner = board => {
   });
 
   matches.forEach(match => {
-    console.log("line " + match)
     let firstChar = flattenBoard[match[0]]
-    console.log("firstChar " + firstChar);
     for (let i = 1; i < 3; i ++){
       if (flattenBoard[match[i]] === firstChar && flattenBoard[match[i+1]] === firstChar ){
         if (flattenBoard[match[1]] === firstChar && flattenBoard[match[2]] === firstChar ){
