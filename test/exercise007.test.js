@@ -79,7 +79,7 @@ describe("hexToRGB", () => {
     });
 });
 
-fdescribe("findWinner", () => {
+describe("findWinner", () => {
     const board1 = [
         ["X", "0", null],
         ["X", null, "0"],
@@ -87,6 +87,42 @@ fdescribe("findWinner", () => {
     ];
     test("should return X if player X has won", () => {
         expect(findWinner(board1)).toEqual("X");   
+    })
+
+    const board2 = [
+        ["0", "0", "0"],
+        ["X", null, null],
+        ["X", null, "X"]
+    ];
+    test("should return 0 if player 0 has won", () => {
+        expect(findWinner(board2)).toEqual("0");   
+    });
+
+    const board3 = [
+        [null, "0", "0"],
+        ["X", "0", null],
+        ["X", null, "X"]
+    ];
+    test("should return 0 if player 0 has won", () => {
+        expect(findWinner(board3)).toEqual(null);   
+    });
+
+    const board4 = [
+        ["X", "X", "X"],
+        ["0", null, "0"],
+        [null, null, "0"]
+    ];
+    test("should return X if player X has won", () => {
+        expect(findWinner(board4)).toEqual("X");   
+    })
+
+    const board5 = [
+        ["0", "X", null],
+        ["X", "0", "X"],
+        [null, null, "0"]
+    ];
+    test("should return 0 if player 0 has won diagonally", () => {
+        expect(findWinner(board5)).toEqual("0");   
     })
 });
 
