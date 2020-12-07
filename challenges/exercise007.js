@@ -117,10 +117,30 @@ const hexToRGB = hexStr => {
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
   const matches = [[1, 2, 3], [4, 5, 6], [7, 8, 9], //horizontal
-                 [1, 4, 7], [2, 5, 8], [3, 6, 9], //vertical
-                 [1, 5, 9],[3, 5, 7]]; //diagonal
+                  [1, 4, 7], [2, 5, 8], [3, 6, 9], //vertical
+                  [1, 5, 9],[3, 5, 7]]; //diagonal
 
-  
+  let X = 0, O = 0;
+  for(let i = 0; i < board.length; i++) {
+    for(let j = 0; j < board[i].length; j++) {
+      if (board[i][j] === "X"){
+        X += matches[i][j];
+      }
+      else if (board[i][j] === "0"){
+        O += matches[i][j];
+      };
+    };
+  };
+  const winArr = [7,12,14,15,18,22]; //based on matches
+  if( winArr.indexOf(X) != -1){
+    return "X";
+  }
+  else if( winArr.indexOf(O) != -1){
+    return "0";
+  }
+  else{
+    return "null";
+  }
 };
 
 module.exports = {
