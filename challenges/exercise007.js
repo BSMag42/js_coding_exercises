@@ -61,7 +61,6 @@ const createRange = (start, end, step = 1) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
-
   let screenArr = [];
   for (let i = 0; i < users.length; i++) {
     let totalUserMin = 0;
@@ -74,7 +73,7 @@ const getScreentimeAlertList = (users, date) => {
     if (totalUserMin > 100) {
       screenArr.push(users[i].username);
     };
-  };//outer for
+  };
   return screenArr;
 };
 
@@ -96,7 +95,6 @@ const hexToRGB = hexStr => {
   let red = parseInt(hexStr.slice(1, 3), 16);
   let green = parseInt(hexStr.slice(3, 5), 16);
   let blue = parseInt(hexStr.slice(5, 7), 16);
-
   return "rgb(" + red + "," + green + "," + blue + ")";
 };
 

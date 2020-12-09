@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/techreturners/js_practice_march2020.git"
+    "url": "git+https://github.com/techreturners/js_coding_exercises"
   },
   "keywords": [],
   "author": "Tech Returners",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/techreturners/js_practice_march2020/issues"
+    "url": "https://github.com/techreturners/js_coding_exercises"
   },
-  "homepage": "https://github.com/techreturners/js_practice_march2020#readme",
+  "homepage": "https://github.com/techreturners/js_coding_exercises/blob/master/README.md",
   "devDependencies": {
     "eslint": "^6.8.0",
     "jest": "^25.2.4"
