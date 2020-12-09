@@ -120,11 +120,6 @@ const findWinner = board => {
                    [1, 4, 7], [2, 5, 8], [3, 6, 9], //vertical
                    [1, 5, 9],[3, 5, 7]]; //diagonal
 
-//flatten out board using Array.flat
-//create an object
-//then compare position
-//null case - define result for null value at start
-
   let flattenBoard ={};
   let winningChar = null;// X, 0 or null
   board.flat().forEach((element,index) => {
